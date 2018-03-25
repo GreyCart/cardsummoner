@@ -1,5 +1,5 @@
 let fs = require('fs');
-let hexFile = fs.readFileSync('./docs/e.hex', 'utf8');
+let hexFile = fs.readFileSync('./docs/rom.hex', 'utf8');
 let hexArr = hexFile.split(' ');
 
 let c = document.getElementById('canvas');  // Init the canvas
