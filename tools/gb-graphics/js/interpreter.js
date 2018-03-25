@@ -7,8 +7,8 @@ let ctx = c.getContext('2d');
 c.width = 720;
 c.height = 720;
 
-let currentAddr = 0x0;
-let currentIndx = 0;
+let currentAddr = 0x1b2100;
+let currentIndx = 1777920;
 
 let addr = document.getElementById('addr');
 addr.innerText = currentAddr.toString(16);
@@ -20,7 +20,7 @@ let palette = bg0;
 
 function changeAddr(flag) {
     if(flag) {
-        if(currentAddr != 0xfff0) {
+        if(currentAddr != 0x200000) {
             currentAddr += 0x10;
             currentIndx += 16;
         }
