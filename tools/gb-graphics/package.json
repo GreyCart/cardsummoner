@@ -1,0 +1,26 @@
+{
+  "name": "gb-graphics",
+  "version": "1.0.0",
+  "description": "A tool for displaying gb tiles",
+  "main": "app.js",
+  "scripts": {
+    "test": "electron app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n/a.git"
+  },
+  "keywords": [
+    "gameboy"
+  ],
+  "author": "Ethan Moody",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a#readme",
+  "dependencies": {
+    "electron": "^1.8.4",
+    "npm": "^5.7.1"
+  }
+}
