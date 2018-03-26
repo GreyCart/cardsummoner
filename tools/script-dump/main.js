@@ -1,8 +1,9 @@
 #!/usr/local/bin/node
 
+let args = process.argv;
 let fs = require('fs');
 
-let table = fs.readFileSync('./docs/cardsummoner.tbl', 'utf8');
+let table = fs.readFileSync(args[3], 'utf8');
 table = table.split("\r\n");
 
 let tableObj = {};
@@ -14,7 +15,7 @@ for(i=0; i!=table.length; i++) {
 }
 
 
-let rom = fs.readFileSync('./docs/rom.hex', 'utf8');
+let rom = fs.readFileSync(args[2], 'utf8');
 rom = rom.split(" ");
 
 let script = '';
@@ -32,4 +33,4 @@ for(i=0; i!=rom.length; i++) {
 	}
 }
 
-fs.writeFileSync('./docs/script.txt', script);
+fs.writeFileSync(args[4], script);
