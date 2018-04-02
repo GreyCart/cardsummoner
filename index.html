@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>SMTTC:CS Util</title>
+		<style>
+			canvas {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cnvs"></canvas>
+		<p>
+			<input type="button" value="-" onclick="shiftAddr(false)">
+			<input type="button" value="+" onclick="shiftAddr(true)">
+			Current address: 0x<span id="addr"></span>
+		</p>
+
+		<script src="./romhex.js"></script>
+		<script>
+			let addr = document.getElementById('addr');
+			let cnvs = document.getElementById('cnvs');
+			let scale = 8;
+
+			cnvs.width = 40 * scale;
+			cnvs.height = 32 * scale;
+			ctx = cnvs.getContext('2d');
+
+			palette = ['#ffffff', '#999999', '#555555', '#000000'];
+
+			romhex = romhex.split(' ');
+
+			let hexAddr = 0x10;
+
+			function updateDisplayAddr() {
+				let hexString = hexAddr.toString(16);
+				addr.innerText = hexString;
+			}
+
+			updateDisplayAddr();
+
+			function shiftAddr(flag) {
+				if(flag && hexAddr < romhex.length) {
+					hexAddr += 0x10;
+				} else if(!flag && hexAddr != 0) {
+					hexAddr -= 0x10;
+				}
+
+				updateDisplayAddr();
+			}
+
+			function drawTile(loc, x, y) {
+				for(y=0; y!=8; y++) {
+					for(x=loc; x!=16+loc; x++) {
+						
+					}
+				}
+			}
+
+			// x * 8 * scale
+		</script>
+	</body>
+</html>
