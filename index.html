@@ -49,11 +49,79 @@
 
 				updateDisplayAddr();
 			}
+			
+			function parseNibble(nib) {
+				switch(nib) {
+					case '0':
+						return '0000';
+						break;
+					case '1':
+						return '0001';
+						break;
+					case '2':
+						return '0010';
+						break;
+					case '3':
+						return '0011';
+						break;
+					case '4':
+						return '0100';
+						break;
+					case '5':
+						return '0101';
+						break;
+					case '6':
+						return '0110';
+						break;
+					case '7':
+						return '0111';
+						break;
+					case '8':
+						return '1000';
+						break;
+					case '9':
+						return '1001';
+						break;
+					case 'A':
+						return '1010';
+						break;
+					case 'B':
+						return '1011';
+						break;
+					case 'C':
+						return '1100';
+						break;
+					case 'D':
+						return '1101';
+						break;
+					case 'E':
+						return '1110';
+						break;
+					case 'F':
+						return '1111';
+						break;
+				}
+			}
 
+			function setPalette(loc, offset) {
+				let loX = romhex[loc].split('')[0];
+				let loY = romhex[loc].split('')[1];
+				let hiX = romhex[loc+1].split('')[0];
+				let hiY = romhex[loc+1].split('')[1];
+				
+				let hiByte = parseNibble(hiX) + parseNibble(hiY);
+				let loByte = parseNibble(loX) + parseNibble(loY);
+				
+				hiByte = hiByte.split('');
+				loByte = loByte.split('');
+				
+				// finish later
+			}
+			
 			function drawTile(loc, x, y) {
 				for(y=0; y!=8; y++) {
 					for(x=loc; x!=16+loc; x++) {
-						
+						setPalette(loc, x);
 					}
 				}
 			}
