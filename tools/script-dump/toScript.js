@@ -21,16 +21,7 @@ rom = rom.split(" ");
 let script = '';
 
 for(i=0; i!=rom.length; i++) {
-	if(tableObj[rom[i]] == undefined) {
-		script += '\n';
-	} else {
-		if(tableObj[rom[i]] == "ド") {
-			if(tableObj[rom[i-2]] == "カ") {
-				console.log(rom[i-1]);
-			}
-		}
 		script += tableObj[rom[i]];
-	}
 }
 
 fs.writeFileSync(args[4], script);

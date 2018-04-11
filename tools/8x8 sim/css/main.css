@@ -1,0 +1,14 @@
+.pixel {
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid red;
+    display: inline-block;
+    background: white;
+}
+
+input[type="text"] {
+    width: 378px;
+}
+
